@@ -21,5 +21,5 @@ yc.Payments().Create(models.PaymentRequest{
 })
 ```
 
-- [Документация](https://pkg.go.dev/github.com/ReanSn0w/go-yookassa@v0.1.2)
+- [Документация](https://pkg.go.dev/github.com/ReanSn0w/go-yookassa@v0.1.3)
 - MIT Лицензия

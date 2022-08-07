@@ -73,6 +73,10 @@ func (c *Client) PersonalData() *PersonalData {
 	return &PersonalData{yookassa: c}
 }
 
+func (c *Client) Deals() *Deals {
+	return &Deals{yookassa: c}
+}
+
 func (c *Client) Webhooks(token string) *Webhooks {
 	return &Webhooks{yookassa: c, token: token}
 }
