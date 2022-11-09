@@ -44,6 +44,7 @@ type PaymentRequest struct {
 	Transfers          []Transfer     `json:"transfers,omitempty"`
 	Deal               *DealItem      `json:"deal,omitempty"`
 	MerchantCustomerID string         `json:"merchant_customer_id,omitempty"`
+	Capture            bool           `json:"capture,omitempty"`
 }
 
 // Ответ на запрос получения списка платежей
