@@ -31,7 +31,7 @@ type Payment struct {
 type PaymentRequest struct {
 	Amount             Amount         `json:"amount"`
 	Description        string         `json:"description,omitempty"`
-	Reciept            *RecieptInfo   `json:"reciept,omitempty"`
+	Reciept            *ReceiptInfo   `json:"receipt,omitempty"`
 	Recipient          *Recipient     `json:"recepient,omitempty"`
 	PaymentToken       string         `json:"payment_token,omitempty"`
 	PaymentMethodID    string         `json:"payment_method_id,omitempty"`
@@ -57,7 +57,7 @@ type PaymentListResponse struct {
 // Структура для описания запроса на подтвержение проведения платежа
 type CaptureRequest struct {
 	Amount    *Amount    `json:"amount,omitempty"`
-	Reciept   *Reciept   `json:"reciept,omitempty"`
+	Reciept   *Receipt   `json:"receipt,omitempty"`
 	Airline   *Airline   `json:"airline,omitempty"`
 	Transfers []Transfer `json:"transfers,omitempty"`
 	Deal      *Deal      `json:"deal,omitempty"`
@@ -84,11 +84,9 @@ type Passenger struct {
 	LastName  string `json:"last_name"`
 }
 
-type RecieptInfo struct {
+type ReceiptInfo struct {
 	Customer                  *Customer                  `json:"customer,omitempty"`
 	Items                     []Item                     `json:"items,omitempty"`
-	Phone                     string                     `json:"phone,omitempty"`
-	Email                     string                     `json:"email,omitempty"`
 	TaxSystemCode             int                        `json:"tax_system_code,omitempty"`
 	RecieptIndustryDetails    []RecieptIndustryDetails   `json:"receipt_industry_details,omitempty"`
 	ReceiptOperationalDetails *ReceiptOperationalDetails `json:"receipt_operational_details,omitempty"`

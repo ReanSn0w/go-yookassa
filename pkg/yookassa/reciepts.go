@@ -17,8 +17,8 @@ type Reciepts struct {
 // Создание нового чека
 //
 // В ответ на запрос придет объект чека в актуальном статусе.
-func (r *Reciepts) Create(req models.RecieptRequest) (*models.Reciept, error) {
-	resp := &models.Reciept{}
+func (r *Reciepts) Create(req models.ReceiptRequest) (*models.Receipt, error) {
+	resp := &models.Receipt{}
 	err := r.yookassa.request(http.MethodPost, "receipts", req, resp)
 	return resp, err
 }
@@ -28,8 +28,8 @@ func (r *Reciepts) Create(req models.RecieptRequest) (*models.Reciept, error) {
 // В ответ на запрос вернется список чеков с учетом переданных параметров.
 // В списке будет информация о чеках, созданных за последние 3 года.
 // Список будет отсортирован по времени создания чеков в порядке убывания.
-func (r *Reciepts) List(req models.ListRequest) (*models.RecieptListResponse, error) {
-	resp := &models.RecieptListResponse{}
+func (r *Reciepts) List(req models.ListRequest) (*models.ReceiptListResponse, error) {
+	resp := &models.ReceiptListResponse{}
 	err := r.yookassa.request(http.MethodGet, fmt.Sprintf("reciepts?%s", req.Query()), nil, resp)
 	return resp, err
 }
@@ -37,8 +37,8 @@ func (r *Reciepts) List(req models.ListRequest) (*models.RecieptListResponse, er
 // Запрос информации о чеке
 //
 // В ответ на запрос придет объект чека в актуальном статусе.
-func (r *Reciepts) Info(id string) (*models.Reciept, error) {
-	resp := &models.Reciept{}
+func (r *Reciepts) Info(id string) (*models.Receipt, error) {
+	resp := &models.Receipt{}
 	err := r.yookassa.request(http.MethodGet, fmt.Sprintf("reciepts/%s", id), nil, resp)
 	return resp, err
 }

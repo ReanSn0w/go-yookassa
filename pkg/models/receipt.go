@@ -1,6 +1,6 @@
 package models
 
-type Reciept struct {
+type Receipt struct {
 	ID                   string                  `json:"id"`                                    // Идентификатор чека
 	Type                 string                  `json:"type"`                                  // Тип чека в онлайн кассе
 	PaymentID            string                  `json:"payment_id,omitempty"`                  // Идентификатор платежа
@@ -19,7 +19,7 @@ type Reciept struct {
 	OperationalDetails   *RecieptIndustryDetails `json:"receipt_operational_details,omitempty"` // Операционный реквизит чека
 }
 
-type RecieptRequest struct {
+type ReceiptRequest struct {
 	Type                string                  `json:"type"`                                  // Тип чека в онлайн-кассе.
 	PaymentID           string                  `json:"payment_id,omitempty"`                  // Идентификатор платежа в сервисе
 	RefoundID           string                  `json:"refound_id,omitempty"`                  // Идентификатор возврата в сервисе
@@ -34,9 +34,9 @@ type RecieptRequest struct {
 	OnBehalfOf          string                  `json:"on_behalf_of"`                          // Идентификатор магазина, от имени которого нужно отправить чек.
 }
 
-type RecieptListResponse struct {
+type ReceiptListResponse struct {
 	Type       string    `json:"type,omitempty"` // Тип ответа возвращаемого от сервиса
-	Items      []Reciept `json:"items"`          // Элементы списка
+	Items      []Receipt `json:"items"`          // Элементы списка
 	NextCursor string    `json:"next_cursor"`    // Курсор для запроса продолжения для списка
 }
 

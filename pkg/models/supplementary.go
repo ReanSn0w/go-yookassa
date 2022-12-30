@@ -102,7 +102,7 @@ type Item struct {
 	Description              string            `json:"description"`
 	Quantity                 string            `json:"quantity"`
 	Measure                  string            `json:"measure,omitempty"`
-	MarkQuantity             MarkQuantity      `json:"mark_quantity,omitempty"`
+	MarkQuantity             *MarkQuantity     `json:"mark_quantity,omitempty"`
 	Amount                   Amount            `json:"amount"`
 	VATCode                  float64           `json:"vat_code"`
 	PaymentSubject           string            `json:"payment_subject,omitempty"`
@@ -111,7 +111,7 @@ type Item struct {
 	CustomsDeclarationNumber string            `json:"customs_declaration_number,omitempty"`
 	Exsize                   string            `json:"exsize,omitempty"`
 	ProductCode              string            `json:"product_code,omitempty"`
-	MarkCodeInfo             MarkCodeInfo      `json:"mark_code_info,omitempty"`
+	MarkCodeInfo             *MarkCodeInfo     `json:"mark_code_info,omitempty"`
 	MarkMode                 string            `json:"mark_mode,omitempty"`
 	IndustryDetails          []IndustryDetails `json:"payment_subject_industry_details,omitempty"`
 }
